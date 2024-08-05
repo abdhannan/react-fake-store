@@ -5,11 +5,13 @@ import './index.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import About from './pages/About.tsx';
+import NotFound from './pages/NotFound.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+    errorElement: <NotFound />,
   },
   {
     path: 'about',
