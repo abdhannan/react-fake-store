@@ -2,12 +2,11 @@ import Categories from './components/Categories';
 import Hero from './components/Hero';
 import Products from './components/Products';
 import SectionTitle from './components/SectionTitle';
-import Header from './layouts/Header';
+import PageLayout from './layouts/PageLayout';
 
 function App() {
   return (
-    <>
-      <Header />
+    <PageLayout>
       <Hero />
       <section className='py-12 bg-white'>
         <SectionTitle
@@ -21,7 +20,7 @@ function App() {
         <SectionTitle heading='Our Products' subHeading='' />
         <Products />
       </section>
-    </>
+    </PageLayout>
   );
 }
 

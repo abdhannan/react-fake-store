@@ -40,10 +40,9 @@ export const fetchCategories = async () => {
 
 export const fetchProducts = async (limit: number) => {
   try {
-    const res = await axios.get(`${BASE_URL}/products?limit=${limit}`);
+    const res = await apiClient.get(`/products?limit=${limit}`);
     return res;
   } catch (error) {
-    console.error('Error fetching products data', error);
-    throw error;
+    /** Add additional error cacth if needed */
   }
 };
