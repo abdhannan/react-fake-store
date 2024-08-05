@@ -1,4 +1,4 @@
-import heroImage from '../../public/hero-image.jpg';
+import heroImage from '/hero-image.jpg';
 const Hero = () => {
   return (
     <section
