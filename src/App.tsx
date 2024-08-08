@@ -18,7 +18,7 @@ function App() {
 
       <section className='py-12 bg-slate-50'>
         <SectionTitle heading='Our Products' subHeading='' />
-        <Products />
+        <Products show={8} />
       </section>
     </PageLayout>
   );

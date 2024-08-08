@@ -1,6 +1,6 @@
 // API SERVICES
 
-import { apiClient } from './apiClient';
+import { apiClient } from '../utils/api/apiClient';
 
 export const fetchCategories = async () => {
   try {

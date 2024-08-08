@@ -6,6 +6,8 @@ import './index.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import About from './pages/About.tsx';
 import NotFound from './pages/NotFound.tsx';
+import Shop from './pages/Shop.tsx';
+import ProductDetails from './pages/ProductDetails.tsx';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,16 @@ const router = createBrowserRouter([
   {
     path: 'about',
     element: <About />,
+  },
+  {
+    path: 'shop',
+    element: <Shop />,
+    children: [
+      {
+        path: 'product/:id',
+        element: <ProductDetails />,
+      },
+    ],
   },
 ]);
 

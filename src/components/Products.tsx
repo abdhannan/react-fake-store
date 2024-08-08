@@ -1,28 +1,40 @@
 import { useEffect, useState } from 'react';
-import { fetchProducts } from '../utils/apiClient';
+import { fetchProducts } from '../services/ApiService';
 import ProductItems, { Product } from './ProductItems';
 
-const Products = () => {
+type Show = {
+  show: number;
+};
+
+const Products = ({ show }: Show) => {
   const [products, setProducts] = useState<Product[]>();
 
-  const getProducts = async () => {
-    try {
-      const res = await fetchProducts(8);
-      return res;
-    } catch (error) {
-      console.error('Failed get products data');
-    }
-  };
+  // const getProducts = async () => {
+  //   try {
+  //     const res = await fetchProducts(show);
+  //     return res;
+  //   } catch (error) {
+  //     console.error('Failed get products data');
+  //   }
+  // };
 
-  useEffect(function () {
-    async function products() {
-      const data = await getProducts();
-      console.log('Products', data);
-      setProducts(data?.data);
-    }
+  useEffect(
+    function () {
+      const getProducts = async () => {
+        try {
+          const res = await fetchProducts(show);
+          const data = await res?.data;
+          setProducts(data);
+        } catch (error) {
+          console.error('Failed get products data');
+        }
+      };
 
-    products();
-  }, []);
+      // products();
+      getProducts();
+    },
+    [show]
+  );
 
   return (
     <div className='container mx-auto'>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import CategoryItems from './CategoryItems';
-import { fetchCategories } from '../utils/ApiService';
+import { fetchCategories } from '../services/ApiService';
 
 interface Categories {
   data: string;
